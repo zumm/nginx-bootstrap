@@ -33,15 +33,11 @@ server
         	limit_conn    CPIP 10;
 	}
 
-	location ~ ^.+\.php(?:/.*)?$
-	{
-		try_files     !noop! @php; 
-	}
 
 	include          bootstrap/modules/gzip.conf;
         include          bootstrap/locations/system.conf;
         include          bootstrap/locations/static.conf;
-
+	include          bootstrap/locations/php.conf;
 }
 
 server
